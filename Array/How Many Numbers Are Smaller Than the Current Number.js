@@ -1,9 +1,5 @@
 var smallerNumbersThanCurrent = function (nums) {
-  return nums.reduce((acc, el, index, arr) => {
-    let arr_sort = [...new Set(arr.sort((a, b) => a - b))];
-    acc.push(arr);
-    el; //?
-    return acc;
-  }, []);
+  const sorted = [...nums].sort((a, b) => a - b);
+  return nums.map((num) => sorted.indexOf(num));
 };
-smallerNumbersThanCurrent([8, 1, 2, 2, 3]); //?
+smallerNumbersThanCurrent([8, 1, 2, 2, 3]);
